@@ -7,12 +7,30 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="musicBean"
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
+    <bean id="classicalMusicBean"
         class="org.example.ClassicalMusic">
+    </bean>
+
+    <bean id="rockMusicBean"
+          class="org.example.RockMusic">
+    </bean>
+
+    <bean id="alterRockMusicBean"
+          class="org.example.AlterRock">
     </bean>
 
     <bean id="musicPlayer"
         class="org.example.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+        <constructor-arg>
+            <list>
+                <ref bean="classicalMusicBean" />
+                <ref bean="rockMusicBean" />
+                <ref bean="alterRockMusicBean" />
+            </list>
+        </constructor-arg>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 </beans>
