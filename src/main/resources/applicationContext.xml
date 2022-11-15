@@ -22,7 +22,8 @@
     </bean>
 
     <bean id="musicPlayer"
-        class="org.example.MusicPlayer">
+        class="org.example.MusicPlayer"
+        scope="prototype">
         <constructor-arg>
             <list>
                 <ref bean="classicalMusicBean" />
