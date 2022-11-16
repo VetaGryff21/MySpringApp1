@@ -18,12 +18,17 @@
     </bean>
 
     <bean id="alterRockMusicBean"
-          class="org.example.AlterRock">
+          class="org.example.AlterRock"
+          factory-method="getAlterRock"
+          init-method="doBeanInit"
+          destroy-method="doBeanDestroy">
     </bean>
 
     <bean id="musicPlayer"
         class="org.example.MusicPlayer"
-        scope="prototype">
+        scope="prototype"
+        init-method="doBeanInit"
+        destroy-method="doBeanDestroy">
         <constructor-arg>
             <list>
                 <ref bean="classicalMusicBean" />
