@@ -19,6 +19,7 @@
 
     <bean id="alterRockMusicBean"
           class="org.example.AlterRock"
+          factory-method="getAlterRock"
           init-method="doBeanInit"
           destroy-method="doBeanDestroy">
     </bean>
