@@ -39,4 +39,12 @@ public class MusicPlayer {
     public int getVolume() {
         return volume;
     }
+
+    public void doBeanInit() {
+        System.out.println("\nInit MusicPlayer Bean\n");
+    }
+
+    public void doBeanDestroy() {
+        System.out.println("\nDestroy MusicPlayer Bean\n");
+    }
 }
