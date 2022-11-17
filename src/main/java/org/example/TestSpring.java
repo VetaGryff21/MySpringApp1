@@ -7,9 +7,6 @@ public class TestSpring {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml");
 
-//        AlterRock alterRock = context.getBean("alterRockMusicBean", AlterRock.class);
-//        System.out.println(alterRock.getSong());
-
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
         System.out.println("Player name is " + musicPlayer.getName());
