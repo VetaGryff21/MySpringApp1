@@ -1,12 +1,9 @@
 package org.example;
 
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@Component
 public class ClassicalMusic implements Music {
     private List<String> musicList = new ArrayList<>();
 

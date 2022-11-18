@@ -1,9 +1,7 @@
 package org.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
 public class Computer {
     private int id;
     private MusicPlayer player;
@@ -19,6 +17,6 @@ public class Computer {
         return "Computer: " + id
                 + "\nPlayer: " + player.getName()
                 + "\nVolume: " + player.getVolume()
-                + "\nSong: " + player.playMusic(Genre.CLASSICAL);
+                + "\nSong: " + player.playMusic();
     }
 }

@@ -1,7 +1,5 @@
 package org.example;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
@@ -9,12 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@Component
-@Scope("prototype")
 public class RockMusic implements Music{
     private List<String> musicList = new ArrayList<>();
 
-    private RockMusic(){
+    RockMusic(){
         musicList.add("Aria - 1");
         musicList.add("Aria - 2");
         musicList.add("Aria - 3");
