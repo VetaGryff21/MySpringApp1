@@ -2,25 +2,28 @@ package org.example;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 @Component
 public class AlterRock implements Music{
+    private List<String> musicList = new ArrayList<>();
 
-    private AlterRock(){}
-
-    public static AlterRock getAlterRock() {
-        return new AlterRock();
+    public AlterRock(){
+        musicList.add("LP - One More Light");
+        musicList.add("LP - Numb");
+        musicList.add("LP - Faint");
     }
 
     @Override
-    public String getSong() {
-        return "LP - One More Light";
+    public List<String> getSong() {
+        return musicList;
     }
 
-    public void doBeanInit() {
-        System.out.println("\nInit AlterRock Bean\n");
-    }
-
-    public void doBeanDestroy() {
-        System.out.println("\nDestroy AlterRock Bean\n");
+    @Override
+    public String getRandomSong() {
+        Random random = new Random();
+        return musicList.get(random.nextInt(musicList.size()));
     }
 }
