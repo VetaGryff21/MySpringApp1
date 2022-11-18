@@ -1,15 +1,20 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MusicPlayer {
-    private Music music;
+    private AlterRock music;
     private String name;
     private int volume;
 
-    //IoC
-    public MusicPlayer(Music music) {
+    public MusicPlayer(AlterRock music) {
+        this.music = music;
+    }
+
+    @Autowired
+    public void setMusic(AlterRock music) {
         this.music = music;
     }
 
